@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:local="clr-namespace:Calc"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="450">
     <Grid>
@@ -24,109 +24,103 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="0"
+        <Label x:Name="resultLabel" Content="0"
                HorizontalAlignment="Right"
                VerticalAlignment="Bottom"
                FontSize="50"
               Grid.ColumnSpan="4"/>
-        <Button Content="AC"
+        <Button x:Name="acButton" Content="AC"
                 FontSize="22"
                 Margin="5"
                 Grid.Row="1"
                 Grid.Column="0"/>
-        <Button Content="+/1"
+        <Button x:Name="plusOneButton" Content="+/1"
                 FontSize="22"
                 Margin="5"
                 Grid.Row="1"
                 Grid.Column="1"/>
-        <Button Content="%"
+        <Button x:Name="percentButton" Content="%"
                 FontSize="22"
                 Margin="5"
                 Grid.Row="1"
                 Grid.Column="2"/>
-        <Button Content="/"
+        <Button x:Name="divideButton" Content="/"
                 FontSize="22"
                 Margin="5"
                 Grid.Row="1"
                 Grid.Column="3"/>
-        <Button Content="7"
+        <Button x:Name="numberSeven" Content="7"
                 FontSize="22"
                 Margin="5"
                 Grid.Row="2"
                 Grid.Column="0"/>
-        <Button Content="8"
+        <Button x:Name="numberEight" Content="8"
                 FontSize="22"
                 Margin="5"
                 Grid.Row="2"
                 Grid.Column="1"/>
-        <Button Content="9"
+        <Button x:Name="numberNine" Content="9"
                 FontSize="22"
                 Margin="5"
                 Grid.Row="2"
                 Grid.Column="2"/>
-        <Button Content="*"
+        <Button x:Name="multiplyButton" Content="*"
                 FontSize="22"
                 Margin="5"
                 Grid.Row="2"
                 Grid.Column="3"/>
-        <Button Content="4"
+        <Button x:Name="numberFour" Content="4"
                 FontSize="22"
                 Margin="5"
                 Grid.Row="3"
                 Grid.Column="0"/>
-        <Button Content="5"
+        <Button x:Name="numberFive" Content="5"
                 FontSize="22"
                 Margin="5"
                 Grid.Row="3"
                 Grid.Column="1"/>
-        <Button Content="6"
+        <Button x:Name="numberSix" Content="6"
                 FontSize="22"
                 Margin="5"
                 Grid.Row="3"
                 Grid.Column="2"/>
-        <Button Content="-"
+        <Button x:Name="minusButton" Content="-"
                 FontSize="22"
                 Margin="5"
                 Grid.Row="3"
                 Grid.Column="3"/>
-        <Button Content="1"
+        <Button x:Name="numberOne" Content="1"
                 FontSize="22"
                 Margin="5"
                 Grid.Row="4"
                 Grid.Column="0"/>
-        <Button Content="2"
+        <Button x:Name="numberTwo" Content="2"
                 FontSize="22"
                 Margin="5"
                 Grid.Row="4"
                 Grid.Column="1"/>
-        <Button Content="3"
+        <Button x:Name="numberThree" Content="3"
                 FontSize="22"
                 Margin="5"
                 Grid.Row="4"
                 Grid.Column="2"/>
-        <Button Content="+"
+        <Button x:Name="plusButton" Content="+"
                 FontSize="22"
                 Margin="5"
                 Grid.Row="4"
                 Grid.Column="3"/>
-        <Button Content="0"
+        <Button x:Name="numberZero" Content="0"
                 FontSize="22"
                 Margin="5"
                 Grid.Row="5"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"/>
-        <Button Content="0"
-                FontSize="22"
-                Margin="5"
-                Grid.Row="5"
-                Grid.Column="0"
-                Grid.ColumnSpan="2"/>
-        <Button Content="."
+        <Button x:Name="dotButton" Content="."
                 FontSize="22"
                 Margin="5"
                 Grid.Row="5"
                 Grid.Column="2"/>
-        <Button Content="="
+        <Button x:Name="equalsButton" Content="="
                 FontSize="22"
                 Margin="5"
                 Grid.Row="5"
