@@ -29,7 +29,7 @@ namespace Calc
         {
             InitializeComponent();
 
-            numberSeven.Click += NumberSeven_Click;
+           
             acButton.Click += AcButton_Click;
             positiveNegativeButton.Click += PositiveNegativeButton_Click;
             equalsButton.Click += EqualsButton_Click;
@@ -50,16 +50,68 @@ namespace Calc
             }
         }
 
-        private void NumberSeven_Click(object sender, RoutedEventArgs e)
+        private void NumberButton_Click(object sender, RoutedEventArgs e)
         {
+            int selectedNumber = int.Parse((sender as Button).Content.ToString());
+
+            //if(sender == numberZero)
+            //{
+            //    selectedNumber = 0;
+            //}
+
+            //if (sender == numberOne)
+            //{
+            //    selectedNumber = 1;
+            //}
+
+            //if (sender == numberTwo)
+            //{
+            //    selectedNumber = 2;
+            //}
+
+            //if (sender == numberThree)
+            //{
+            //    selectedNumber = 3;
+            //}
+
+            //if (sender == numberFour)
+            //{
+            //    selectedNumber = 4;
+            //}
+
+            //if (sender == numberFive)
+            //{
+            //    selectedNumber = 5;
+            //}
+
+            //if (sender == numberSix)
+            //{
+            //    selectedNumber = 6;
+            //}
+
+            //if (sender == numberSeven)
+            //{
+            //    selectedNumber = 7;
+            //}
+
+            //if (sender == numberEight)
+            //{
+            //    selectedNumber = 8;
+            //}
+
+            //if (sender == numberNine)
+            //{
+            //    selectedNumber = 9;
+            //}
+
             if (resultLabel.Content.ToString() == "0")
             {
-                resultLabel.Content = "7";
+                resultLabel.Content = $"{selectedNumber}";
             }
 
             else
             {
-
+                resultLabel.Content = $"{resultLabel.Content}{selectedNumber}";
             }
         }
 
@@ -67,14 +119,38 @@ namespace Calc
         {
             if (double.TryParse(resultLabel.Content.ToString(), out lastNumber))
             {
-                lastNumber = lastNumber * -1;
-                resultLabel.Content = lastNumber.ToString();
+                if (lastNumber == 0)
+                {
+                    resultLabel.Content = lastNumber.ToString();
+                }
+                else
+                {
+                    lastNumber = lastNumber * -1;
+                    resultLabel.Content = lastNumber.ToString();
+                }
             }
         }
 
         private void AcButton_Click(object sender, RoutedEventArgs e)
         {
             resultLabel.Content = "0";
+        }
+
+        private void OperationButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (double.TryParse(resultLabel.Content.ToString(), out lastNumber))
+            {
+
+                resultLabel.Content = 0;
+            }
+                
+
+
+                if (sender == divideButton)
+            {
+
+            }
         }
     }
 }
