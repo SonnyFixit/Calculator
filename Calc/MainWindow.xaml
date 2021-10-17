@@ -6,6 +6,13 @@
         xmlns:local="clr-namespace:Calc"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="450">
+
+    <Window.Resources>
+        
+    </Window.Resources>
+    
+    
+    
     <Grid>
         <Grid.Margin>10</Grid.Margin>
         <Grid.ColumnDefinitions>
@@ -31,21 +38,29 @@
               Grid.ColumnSpan="4"/>
         <Button x:Name="acButton" Content="AC"
                 FontSize="22"
+                Background="DarkGray"
+                Foreground="White"
                 Margin="5"
                 Grid.Row="1"
                 Grid.Column="0"/>
         <Button x:Name="positiveNegativeButton" Content="+/-"
                 FontSize="22"
+                Background="DarkGray"
+                Foreground="White"
                 Margin="5"
                 Grid.Row="1"
                 Grid.Column="1"/>
         <Button x:Name="percentButton" Content="%"
                 FontSize="22"
+                Background="DarkGray"
+                Foreground="White"
                 Margin="5"
                 Grid.Row="1"
                 Grid.Column="2"/>
         <Button x:Name="divideButton" Content="/"
                 Click="OperationButton_Click"
+                Background="OrangeRed"
+                Foreground="White"
                 FontSize="22"
                 Margin="5"
                 Grid.Row="1"
@@ -70,6 +85,8 @@
                 Grid.Column="2"/>
         <Button x:Name="multiplyButton" Content="*"
                 Click="OperationButton_Click"
+                Background="OrangeRed"
+                Foreground="White"
                 FontSize="22"
                 Margin="5"
                 Grid.Row="2"
@@ -94,7 +111,9 @@
                 Grid.Column="2"/>
         <Button x:Name="minusButton" Content="-"
                 Click="OperationButton_Click"
-                FontSize="22"
+                Background="OrangeRed"
+                Foreground ="White"
+                FontSize="30"
                 Margin="5"
                 Grid.Row="3"
                 Grid.Column="3"/>
@@ -118,6 +137,8 @@
                 Grid.Column="2"/>
         <Button x:Name="plusButton" Content="+"
                 Click="OperationButton_Click"
+                Background="OrangeRed"
+                Foreground="White"
                 FontSize="22"
                 Margin="5"
                 Grid.Row="4"
@@ -130,12 +151,15 @@
                 Grid.Column="0"
                 Grid.ColumnSpan="2"/>
         <Button x:Name="dotButton" Content="."
+                Click="DotButton_Click"
                 FontSize="22"
                 Margin="5"
                 Grid.Row="5"
                 Grid.Column="2"/>
         <Button x:Name="equalsButton" Content="="
                 FontSize="22"
+                Background="OrangeRed"
+                Foreground="White"
                 Margin="5"
                 Grid.Row="5"
                 Grid.Column="3"/>

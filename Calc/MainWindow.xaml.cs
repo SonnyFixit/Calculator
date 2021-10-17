@@ -23,6 +23,7 @@ namespace Calc
 
         private double lastNumber;
         private double result;
+        SelectedOperator selectedOperator;
         
 
         public MainWindow()
@@ -38,15 +39,63 @@ namespace Calc
 
         private void EqualsButton_Click(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            double newNumber;
+
+
+            if (double.TryParse(resultLabel.Content.ToString(), out newNumber))
+            {
+                if(selectedOperator == SelectedOperator.Addition)
+                {
+                    result = MathOperations.Add(lastNumber, newNumber);
+                }
+
+                if (selectedOperator == SelectedOperator.Substraction)
+                {
+                    result = MathOperations.Substract(lastNumber, newNumber);
+                }
+
+                if (selectedOperator == SelectedOperator.Multiplication)
+                {
+                    result = MathOperations.Multiply(lastNumber, newNumber);
+                }
+
+                if (selectedOperator == SelectedOperator.Division)
+                {
+                    result = MathOperations.Divide(lastNumber, newNumber);
+                }
+            }
+
+            resultLabel.Content = result.ToString();
+
+
         }
 
         private void PercentButton_Click(object sender, RoutedEventArgs e)
         {
-            if (double.TryParse(resultLabel.Content.ToString(), out lastNumber))
+            double tempNumber;
+
+            if (double.TryParse(resultLabel.Content.ToString(), out tempNumber))
             {
-                lastNumber = lastNumber /100;
-                resultLabel.Content = lastNumber.ToString();
+                tempNumber = (tempNumber /100);
+                
+                if (lastNumber != 0)
+                {
+                    tempNumber *= lastNumber;
+                }
+
+                resultLabel.Content = tempNumber.ToString();
+            }
+        }
+
+        private void DotButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (resultLabel.Content.ToString().Contains("."))
+            {
+                
+            }
+            else
+            {
+                resultLabel.Content = $"{resultLabel.Content}.";
             }
         }
 
@@ -134,6 +183,8 @@ namespace Calc
         private void AcButton_Click(object sender, RoutedEventArgs e)
         {
             resultLabel.Content = "0";
+            result = 0;
+            lastNumber = 0;
         }
 
         private void OperationButton_Click(object sender, RoutedEventArgs e)
@@ -147,9 +198,61 @@ namespace Calc
                 
 
 
-                if (sender == divideButton)
+            if (sender == divideButton)
+            {
+                selectedOperator = SelectedOperator.Division;
+            }
+            if (sender == multiplyButton)
+            {
+                selectedOperator = SelectedOperator.Multiplication;
+            }
+            if(sender == plusButton)
+            {
+                selectedOperator = SelectedOperator.Addition;
+            }
+            if(sender == minusButton)
+            {
+                selectedOperator = SelectedOperator.Substraction;
+            }
+        }
+    }
+
+    public enum SelectedOperator
+    {
+        Addition,
+        Substraction,
+        Multiplication,
+        Division
+    }
+
+    public class MathOperations
+    {
+        public static double Add(double number1, double number2)
+        {
+            return number1 + number2;
+        }
+        public static double Substract(double number1, double number2)
+        {
+            return number1 - number2;
+        }
+
+        public static double Multiply(double number1, double number2)
+        {
+            return number1 * number2;
+        }
+
+        public static double Divide(double number1, double number2)
+        {
+
+            if (number2 == 0)
+            {
+                MessageBox.Show("Division by 0 is not supported", "Wrong operation", MessageBoxButton.OK, MessageBoxImage.Error);
+                return 0;
+            }
+            else
             {
 
+                return number1 / number2;
             }
         }
     }
